@@ -1,0 +1,187 @@
+/* AirFly Insights - Final Dashboard styling (light premium theme) */
+
+/* Global typography */
+html, body, [class*="css"] {
+  font-family: "Inter", "Segoe UI", "Poppins", sans-serif;
+}
+
+/* Main dashboard background (cool light-black, sidebar untouched) */
+.stApp {
+  background:
+    radial-gradient(900px 500px at 10% 0%, #2c3242 0%, transparent 70%),
+    radial-gradient(900px 520px at 95% 0%, #273846 0%, transparent 70%),
+    linear-gradient(180deg, #222834 0%, #1d2430 55%, #1a202b 100%);
+  color: #e7edf8;
+}
+
+section.main > div {
+  max-width: 1240px;
+}
+
+/* Header hero */
+.afi-hero {
+  padding: 14px 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(137, 165, 255, 0.22);
+  box-shadow: 0 12px 34px rgba(6, 12, 22, 0.32);
+  margin-bottom: 12px;
+}
+
+.afi-kicker {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #3d5af1;
+}
+
+.afi-title {
+  margin: 2px 0 4px 0;
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.2;
+  background: linear-gradient(90deg, #1f3fb8 0%, #2f74ff 45%, #00a0c8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.afi-caption {
+  color: #c9d5f2;
+  font-size: 14px;
+}
+
+/* Sidebar */
+section[data-testid="stSidebar"] {
+  background: linear-gradient(180deg, #eef4ff 0%, #e8f0ff 48%, #e4edff 100%);
+  border-right: 1px solid rgba(53, 90, 180, 0.18);
+}
+
+section[data-testid="stSidebar"] * {
+  color: #22304f !important;
+}
+
+.afi-sidebar-title {
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 0.4px;
+  margin: 6px 0 8px 0;
+}
+
+.afi-sidebar-glow {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 8px;
+  animation: glowPulse 2.8s ease-in-out infinite;
+  background: linear-gradient(90deg, #2f5dff 0%, #00a0c8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    transform: scale(1);
+    text-shadow: 0 0 0 rgba(47, 93, 255, 0.0);
+  }
+  50% {
+    transform: scale(1.03);
+    text-shadow: 0 0 12px rgba(47, 93, 255, 0.30);
+  }
+}
+
+.afi-sidebar-subtitle {
+  font-size: 12px;
+  opacity: 0.9;
+  margin: 0 0 12px 0;
+}
+
+.afi-badge {
+  display: inline-block;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: rgba(59, 111, 255, 0.10);
+  border: 1px solid rgba(59, 111, 255, 0.30);
+  font-size: 12px;
+  margin: 4px 0 12px 0;
+  font-weight: 700;
+}
+
+/* Sidebar "Go to" options: card style + active highlight */
+section[data-testid="stSidebar"] div[role="radiogroup"] > label {
+  margin-bottom: 8px !important;
+  padding: 10px 12px !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(45, 82, 170, 0.20);
+  background: rgba(255, 255, 255, 0.72);
+  transition: all 0.2s ease;
+}
+
+section[data-testid="stSidebar"] div[role="radiogroup"] > label:hover {
+  transform: translateX(3px);
+  border-color: rgba(45, 82, 170, 0.45);
+  box-shadow: 0 5px 18px rgba(45, 82, 170, 0.18);
+}
+
+section[data-testid="stSidebar"] div[role="radiogroup"] > label:has(input:checked) {
+  background: linear-gradient(90deg, #2f64ff 0%, #4f85ff 100%);
+  border-color: #2f64ff;
+  box-shadow: 0 8px 24px rgba(47, 100, 255, 0.35);
+}
+
+section[data-testid="stSidebar"] div[role="radiogroup"] > label:has(input:checked) p {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+
+/* Cards + containers */
+.afi-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(133, 159, 245, 0.24);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 12px 28px rgba(4, 10, 20, 0.34);
+}
+
+.afi-card h3 {
+  margin: 0 0 6px 0;
+  color: #c9d8ff;
+  font-size: 17px;
+}
+
+.afi-muted {
+  color: #d0dcf7;
+}
+
+.afi-hr {
+  height: 1px;
+  background: rgba(155, 174, 228, 0.32);
+  margin: 14px 0;
+}
+
+/* Improve default containers */
+div[data-testid="stMetric"] {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(133, 159, 245, 0.26);
+  border-radius: 14px;
+  padding: 10px;
+}
+
+div.stPlotlyChart, div[data-testid="stDataFrame"], div[data-testid="stTable"] {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(133, 159, 245, 0.22);
+  border-radius: 14px;
+  padding: 8px;
+}
+
+/* Keep visuals smooth and fully within containers */
+div.stPlotlyChart {
+  width: 100%;
+}
+
+/* Remove Streamlit fullscreen/expand icon from chart blocks */
+button[data-testid="StyledFullScreenButton"] {
+  display: none !important;
+}
+
